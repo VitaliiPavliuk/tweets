@@ -1,23 +1,19 @@
 {
   "files": {
-    "main.css": "/tweets/static/css/main.1083b3b2.css",
-    "main.js": "/tweets/static/js/main.6374cba6.js",
-    "static/js/983.30bff7f7.chunk.js": "/tweets/static/js/983.30bff7f7.chunk.js",
-    "static/js/432.32da28b7.chunk.js": "/tweets/static/js/432.32da28b7.chunk.js",
-    "static/js/637.dff8b4e8.chunk.js": "/tweets/static/js/637.dff8b4e8.chunk.js",
-    "static/js/868.f4d0cdae.chunk.js": "/tweets/static/js/868.f4d0cdae.chunk.js",
-    "static/js/232.17250ea1.chunk.js": "/tweets/static/js/232.17250ea1.chunk.js",
+    "main.css": "/tweets/static/css/main.9c1533d4.css",
+    "main.js": "/tweets/static/js/main.75d5e253.js",
+    "static/js/983.75a49190.chunk.js": "/tweets/static/js/983.75a49190.chunk.js",
+    "static/js/850.ac3604bc.chunk.js": "/tweets/static/js/850.ac3604bc.chunk.js",
+    "static/js/619.0d5dc69f.chunk.js": "/tweets/static/js/619.0d5dc69f.chunk.js",
     "index.html": "/tweets/index.html",
-    "main.1083b3b2.css.map": "/tweets/static/css/main.1083b3b2.css.map",
-    "main.6374cba6.js.map": "/tweets/static/js/main.6374cba6.js.map",
-    "983.30bff7f7.chunk.js.map": "/tweets/static/js/983.30bff7f7.chunk.js.map",
-    "432.32da28b7.chunk.js.map": "/tweets/static/js/432.32da28b7.chunk.js.map",
-    "637.dff8b4e8.chunk.js.map": "/tweets/static/js/637.dff8b4e8.chunk.js.map",
-    "868.f4d0cdae.chunk.js.map": "/tweets/static/js/868.f4d0cdae.chunk.js.map",
-    "232.17250ea1.chunk.js.map": "/tweets/static/js/232.17250ea1.chunk.js.map"
+    "main.9c1533d4.css.map": "/tweets/static/css/main.9c1533d4.css.map",
+    "main.75d5e253.js.map": "/tweets/static/js/main.75d5e253.js.map",
+    "983.75a49190.chunk.js.map": "/tweets/static/js/983.75a49190.chunk.js.map",
+    "850.ac3604bc.chunk.js.map": "/tweets/static/js/850.ac3604bc.chunk.js.map",
+    "619.0d5dc69f.chunk.js.map": "/tweets/static/js/619.0d5dc69f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1083b3b2.css",
-    "static/js/main.6374cba6.js"
+    "static/css/main.9c1533d4.css",
+    "static/js/main.75d5e253.js"
   ]
 }

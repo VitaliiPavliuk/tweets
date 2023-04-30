@@ -1,8 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { userReducer } from './user/userSlice';
-import { contactsReducer } from './contacts/contactsSlice';
-import { filterReducer } from './filterSlice';
+import { tweetsReducer } from './tweets/tweetsSlice';
+// import { filterReducer } from './filterSlice';
 
 import {
   persistStore,
@@ -16,18 +15,16 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-const userConfig = {
-  key: 'user',
+const usersConfig = {
+  key: 'tweets',
   storage,
-
-  whitelist: ['token'],
 };
 
 export const store = configureStore({
   reducer: {
-    user: persistReducer(userConfig, userReducer),
-    contacts: contactsReducer,
-    filter: filterReducer,
+    tweets: persistReducer(usersConfig, tweetsReducer),
+
+    // filter: filterReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
@@ -38,5 +35,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-
-// import { getDefaultMiddleware } from '@reduxjs/toolkit';

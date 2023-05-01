@@ -8,7 +8,6 @@ import {
 } from '../redux/selectors';
 import { Loader } from 'components/Loader/Loader';
 import { TweetsList } from 'components/TweetsList/TweetsList';
-import { Filter } from 'components/Filter/Filter';
 
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
@@ -30,8 +29,6 @@ function TweetsPage() {
         alignItems: 'center',
       }}
     >
-      <Filter />
-
       <Dropdown
         options={options}
         onChange={value => dispatch(filterTweets(value))}

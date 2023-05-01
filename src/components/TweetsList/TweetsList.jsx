@@ -7,8 +7,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
 import {
-  selectTweets,
-  // selectfilteredContacts,
+  selectFilteredTweets,
+  // selectTweets,
 } from 'redux/selectors';
 import { fetchTweets } from 'redux/tweets/tweets.operations';
 import { toggleFollowed } from 'redux/tweets/tweetsSlice';
@@ -17,8 +17,10 @@ export const TweetsList = ({ tweetsPerPage }) => {
   const [currentTweets, setCurrentTweets] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  // const filteredContacts = useSelector(selectfilteredContacts);
-  const tweets = useSelector(selectTweets);
+
+  // const tweets = useSelector(selectTweets);
+  const tweets = useSelector(selectFilteredTweets);
+
   const dispatch = useDispatch();
 
   useEffect(() => {

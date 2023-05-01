@@ -3,6 +3,10 @@ import { fetchTweets } from './tweets.operations';
 
 const initialState = {
   users: [],
+  filter: {
+    value: 'show all',
+    label: 'show all',
+  },
   status: 'idle',
   error: null,
 };
@@ -23,6 +27,10 @@ const tweetsSlice = createSlice({
           break;
         }
       }
+    },
+
+    filterTweets(state, { payload }) {
+      state.filter = payload;
     },
   },
 
@@ -45,5 +53,5 @@ function errorReducer(state, { payload }) {
   state.error = payload;
 }
 
-export const { toggleFollowed } = tweetsSlice.actions;
+export const { toggleFollowed, filterTweets } = tweetsSlice.actions;
 export const tweetsReducer = tweetsSlice.reducer;

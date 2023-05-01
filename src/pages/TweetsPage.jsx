@@ -1,14 +1,15 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
-import { selectError, selectFilter, selectStatus } from '../redux/selectors';
-import { Loader } from 'components/Loader/Loader';
-import { TweetsList } from 'components/TweetsList/TweetsList';
+import { Link } from 'react-router-dom';
 
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+
 import { filterTweets } from 'redux/tweets/tweetsSlice';
-import { Link } from 'react-router-dom';
+import { selectError, selectFilter, selectStatus } from '../redux/selectors';
+
+import { Loader } from 'components/Loader/Loader';
+import { TweetsList } from 'components/TweetsList/TweetsList';
 
 function TweetsPage() {
   const dispatch = useDispatch();

@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { fetchTweets } from 'redux/tweets/tweets.operations';
+import { setTweetsOnPage } from 'redux/tweets/tweetsSlice';
 import {
   selectFilteredTweets,
   selectTweets,
   selectTweetsOnPage,
 } from 'redux/selectors';
-import { fetchTweets } from 'redux/tweets/tweets.operations';
-import { setTweetsOnPage } from 'redux/tweets/tweetsSlice';
+
 import { Tweet } from 'components/Tweet/Tweet';
+
 import { List, ListItem, ListWrapper, LoadMoreBtn } from './TweetsList.styled';
 
 export const tweetsPerPage = 3;

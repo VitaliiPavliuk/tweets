@@ -1,7 +1,9 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { toggleFollowed } from 'redux/tweets/tweetsSlice';
-import { useDispatch } from 'react-redux';
+
 import {
   Background,
   EllipseStyled,
@@ -10,6 +12,7 @@ import {
   TweetCard,
   Wrapper,
 } from './Tweet.styled';
+
 import avatar from '../../images/avatar.png';
 import logo from '../../images/logo.png';
 import bg from '../../images/background.png';
@@ -42,4 +45,11 @@ export const Tweet = ({ user }) => {
       </Wrapper>
     </TweetCard>
   );
+};
+
+Tweet.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    user: PropTypes.string.isRequired,
+  }).isRequired,
 };

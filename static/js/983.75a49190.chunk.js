@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_template=self.webpackChunkreact_template||[]).push([[983],{3983:function(e,t,c){c.r(t);c(2791);var n=c(3329);t.default=function(){return(0,n.jsx)("h1",{style:{textAlign:"center"},children:"Welcome to Tweets"})}}}]);
-//# sourceMappingURL=983.75a49190.chunk.js.map

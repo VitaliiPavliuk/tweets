@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import { tweetsReducer } from './tweets/tweetsSlice';
-// import { filterReducer } from './filterSlice';
 
 import {
   persistStore,
@@ -23,8 +22,6 @@ const usersConfig = {
 export const store = configureStore({
   reducer: {
     tweets: persistReducer(usersConfig, tweetsReducer),
-
-    // filter: filterReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

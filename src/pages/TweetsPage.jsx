@@ -1,11 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  selectFilter,
-  selectStatus,
-  // selectTweets
-} from '../redux/selectors';
+import { selectFilter, selectStatus } from '../redux/selectors';
 import { Loader } from 'components/Loader/Loader';
 import { TweetsList } from 'components/TweetsList/TweetsList';
 
@@ -16,7 +12,6 @@ import { filterTweets } from 'redux/tweets/tweetsSlice';
 function TweetsPage() {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
-  // const tweets = useSelector(selectTweets);
   const status = useSelector(selectStatus);
 
   const options = ['show all', 'follow', 'followings'];

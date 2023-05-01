@@ -39,7 +39,7 @@ function TweetsPage() {
         placeholder="Select an option"
       />
       {status === 'pending' && <Loader />}
-      <TweetsList tweetsPerPage={3} />
+      <TweetsList />
     </div>
   );
 }

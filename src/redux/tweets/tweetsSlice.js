@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchTweets } from './tweets.operations';
+import { tweetsPerPage } from 'components/TweetsList/TweetsList';
 
 const initialState = {
   users: [],
@@ -7,6 +8,7 @@ const initialState = {
     value: 'show all',
     label: 'show all',
   },
+  onPage: tweetsPerPage,
   status: 'idle',
   error: null,
 };
@@ -31,6 +33,11 @@ const tweetsSlice = createSlice({
 
     filterTweets(state, { payload }) {
       state.filter = payload;
+      state.onPage = tweetsPerPage;
+    },
+
+    setTweetsOnPage(state, { payload }) {
+      state.onPage += payload;
     },
   },
 
@@ -53,5 +60,6 @@ function errorReducer(state, { payload }) {
   state.error = payload;
 }
 
-export const { toggleFollowed, filterTweets } = tweetsSlice.actions;
+export const { toggleFollowed, filterTweets, setTweetsOnPage } =
+  tweetsSlice.actions;
 export const tweetsReducer = tweetsSlice.reducer;

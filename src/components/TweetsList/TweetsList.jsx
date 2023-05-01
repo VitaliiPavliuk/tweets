@@ -6,10 +6,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
-import {
-  selectFilteredTweets,
-  // selectTweets,
-} from 'redux/selectors';
+import { selectFilteredTweets, selectTweets } from 'redux/selectors';
 import { fetchTweets } from 'redux/tweets/tweets.operations';
 import { toggleFollowed } from 'redux/tweets/tweetsSlice';
 
@@ -17,9 +14,8 @@ export const TweetsList = ({ tweetsPerPage }) => {
   const [currentTweets, setCurrentTweets] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-
-  // const tweets = useSelector(selectTweets);
-  const tweets = useSelector(selectFilteredTweets);
+  const tweets = useSelector(selectTweets);
+  const filteredTweets = useSelector(selectFilteredTweets);
 
   const dispatch = useDispatch();
 
@@ -28,13 +24,14 @@ export const TweetsList = ({ tweetsPerPage }) => {
       dispatch(fetchTweets());
       return;
     }
+
     const endOffset = itemOffset + tweetsPerPage;
-    setCurrentTweets(tweets.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(tweets.length / tweetsPerPage));
-  }, [dispatch, itemOffset, tweetsPerPage, tweets]);
+    setCurrentTweets(filteredTweets.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(filteredTweets.length / tweetsPerPage));
+  }, [dispatch, itemOffset, tweetsPerPage, tweets, filteredTweets]);
 
   const handlePageClick = event => {
-    const newOffset = (event.selected * tweetsPerPage) % tweets.length;
+    const newOffset = (event.selected * tweetsPerPage) % filteredTweets.length;
     setItemOffset(newOffset);
   };
 

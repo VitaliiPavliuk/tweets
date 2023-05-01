@@ -17,6 +17,7 @@ import storage from 'redux-persist/lib/storage';
 const usersConfig = {
   key: 'tweets',
   storage,
+  blacklist: ['error', 'status'],
 };
 
 export const store = configureStore({

@@ -20,7 +20,6 @@ function TweetsPage() {
 
   return (
     <>
-      <Link to="/">Go back</Link>
       <div
         style={{
           display: 'flex',
@@ -28,13 +27,15 @@ function TweetsPage() {
           alignItems: 'center',
         }}
       >
+        <Link to="/">Go back</Link>
+
         {status === 'pending' && <Loader />}
 
         {error !== null ? (
           <b>Opps, some error occured: {error}</b>
         ) : (
           <>
-            <h5>FILTER</h5>
+            <h5>Filter</h5>
             <Dropdown
               options={options}
               onChange={value => dispatch(filterTweets(value))}

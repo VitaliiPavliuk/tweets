@@ -9,7 +9,7 @@ import {
 import { fetchTweets } from 'redux/tweets/tweets.operations';
 import { setTweetsOnPage } from 'redux/tweets/tweetsSlice';
 import { Tweet } from 'components/Tweet/Tweet';
-import { LoadMoreBtn } from './TweetsList.styled';
+import { List, ListItem, ListWrapper, LoadMoreBtn } from './TweetsList.styled';
 
 export const tweetsPerPage = 3;
 
@@ -30,31 +30,16 @@ export const TweetsList = () => {
   return (
     <>
       {filteredTweets && (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <ul
-            style={{
-              display: 'grid',
-              gridGap: '30px',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              marginTop: '50px',
-              marginBottom: '50px',
-              padding: '0',
-            }}
-          >
+        <ListWrapper>
+          <List>
             {filteredTweets?.slice(0, onPage)?.map(user => {
               return (
-                <li style={{ display: 'flex' }} key={user.id}>
+                <ListItem key={user.id}>
                   <Tweet key={user.id} user={user} />
-                </li>
+                </ListItem>
               );
             })}
-          </ul>
+          </List>
 
           {onPage < filteredTweets?.length && (
             <LoadMoreBtn
@@ -63,7 +48,7 @@ export const TweetsList = () => {
               Load more
             </LoadMoreBtn>
           )}
-        </div>
+        </ListWrapper>
       )}
     </>
   );

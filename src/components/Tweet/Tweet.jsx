@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import ListItemText from '@mui/material/ListItemText';
 import { toggleFollowed } from 'redux/tweets/tweetsSlice';
 import { useDispatch } from 'react-redux';
 import {

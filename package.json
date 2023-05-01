@@ -4,11 +4,6 @@
   "private": true,
   "homepage": "https://VitaliiPavliuk.github.io/tweets/",
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.11.16",
-    "@mui/styled-engine-sc": "^5.11.11",
     "@redux-devtools/extension": "^3.2.5",
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.3",

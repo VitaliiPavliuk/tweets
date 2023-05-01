@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-
 import {
   selectFilteredTweets,
   selectTweets,
   selectTweetsOnPage,
 } from 'redux/selectors';
 import { fetchTweets } from 'redux/tweets/tweets.operations';
-import { setTweetsOnPage, toggleFollowed } from 'redux/tweets/tweetsSlice';
+import { setTweetsOnPage } from 'redux/tweets/tweetsSlice';
+import { Tweet } from 'components/Tweet/Tweet';
+import { LoadMoreBtn } from './TweetsList.styled';
 
 export const tweetsPerPage = 3;
 
@@ -39,27 +37,31 @@ export const TweetsList = () => {
             alignItems: 'center',
           }}
         >
-          <List dense sx={{ width: '100%', maxWidth: 480 }}>
+          <ul
+            style={{
+              display: 'grid',
+              gridGap: '30px',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              marginTop: '50px',
+              marginBottom: '50px',
+              padding: '0',
+            }}
+          >
             {filteredTweets?.slice(0, onPage)?.map(user => {
               return (
-                <ListItem key={user.id}>
-                  <img src={user.avatar} alt={user.user} />
-                  <ListItemText
-                    divider="true"
-                    primary={`${user.tweets} TWEETS : ${user.followers} FOLLOWERS`}
-                  />
-                  <button onClick={() => dispatch(toggleFollowed(user.id))}>
-                    {user.followed ? 'FOLLOWING' : 'FOLLOW'}
-                  </button>
-                </ListItem>
+                <li style={{ display: 'flex' }} key={user.id}>
+                  <Tweet key={user.id} user={user} />
+                </li>
               );
             })}
-          </List>
+          </ul>
 
           {onPage < filteredTweets?.length && (
-            <button onClick={() => dispatch(setTweetsOnPage(tweetsPerPage))}>
+            <LoadMoreBtn
+              onClick={() => dispatch(setTweetsOnPage(tweetsPerPage))}
+            >
               Load more
-            </button>
+            </LoadMoreBtn>
           )}
         </div>
       )}
